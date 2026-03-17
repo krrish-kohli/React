@@ -19,3 +19,23 @@ const App = () => {
 };
 
 export default App;
+
+// !====State & Events====
+
+// *===Event Types===
+// onClick - when user clicks
+
+// onChange- when input value changes
+
+// onMouseOver - when user hovers
+
+// onSubmit - when a form is submitted
+
+// !====What Are Hooks in React?====
+// 1.Functional 2. Class based component
+// !==== Hook Types====
+// 1. useState
+// useEffect
+// useContext
+// useRef
+// useReducer
