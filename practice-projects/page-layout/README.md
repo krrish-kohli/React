@@ -1,22 +1,64 @@
-# Page Layout Project
+# 🏗️ Page Layout Project
 
 A structural foundation project for building well-organized React applications. This project focuses on implementing a scalable and reusable page layout architecture, ensuring consistent UI across different sections of an app.
 
-## Features
+## 🚀 Features
 
-- **Reusable Layout Component**: Centralized layout management for headers, footers, and sidebars.
-- **Content Slotted Architecture**: Demonstrates the use of children props for dynamic content injection.
-- **Responsive Sizing**: Optimized for various viewport widths to maintain layout integrity.
-- **Modular CSS**: Clean separation of concerns for structural and decorative styles.
+- **Reusable Layout Component**: A master template for consistent page structure.
+- **Dynamic Content Injection**: Leverages React's composition for flexible page bodies.
+- **Responsive Navigation**: Integrated header and sidebar support.
+- **Modern Styling**: Clean and professional layout system.
 
-## Tech Stack
+## 📁 Project Structure
 
-- **React**: For component-based UI structuring.
-- **Vite**: Modern frontend tooling.
-- **CSS**: Custom layout styles (Flexbox/Grid).
+```text
+page-layout/
+├── public/                # Static assets
+├── src/
+│   ├── assets/            # Project images and icons
+│   ├── components/
+│   │   └── Layout.jsx     # Master layout component
+│   ├── App.jsx            # Main application shell
+│   ├── App.css            # Component-specific styles
+│   ├── index.css          # Global styles
+│   └── main.jsx           # Entry point
+├── index.html             # HTML template
+├── package.json           # Project dependencies and scripts
+└── vite.config.js         # Vite configuration
+```
 
-## Getting Started
+## 🛠️ Tech Stack
 
-1. Clone the repository.
-2. Install dependencies: `npm install`.
-3. Start the dev server: `npm run dev`.
+- [React](https://reactjs.org/) - Component-based UI library.
+- [Vite](https://vitejs.dev/) - Ultra-fast development and build tool.
+- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) - Custom styles for layout and responsiveness.
+
+## ⚙️ Getting Started
+
+### Prerequisites
+
+- Node.js (v14 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/krrish-kohli/React.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd practice-projects/page-layout
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+### Running Locally
+
+To start the development server:
+```bash
+npm run dev
+```
+Open `http://localhost:5173` in your browser to view the application.
