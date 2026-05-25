@@ -1,16 +1,53 @@
-# React + Vite
+# 🎁 Props Practice
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A hands-on exploration of data flow in React using `props`. This project demonstrates how to pass data and functions from parent to child components to build modular and reusable UIs.
 
-Currently, two official plugins are available:
+## 🚀 Features
+- **Data Passing**: Transferring strings, numbers, and objects from parent to children.
+- **Component Reusability**: Creating generic components (like `Card` or `Button`) that change behavior based on props.
+- **Callback Props**: Passing functions as props to allow children to communicate with parents.
+- **Default Props**: Handling missing data gracefully with default values.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 📁 Project Structure
+```text
+props-practice/
+├── src/
+│   ├── components/
+│   │   ├── Card.jsx
+│   │   ├── Button.jsx
+│   │   └── UserProfile.jsx
+│   ├── App.jsx
+│   └── main.jsx
+└── README.md
+```
 
-## React Compiler
+## 🛠️ Tech Stack
+- **React** (Vite)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🎯 Learning Objectives
+- Master the unidirectional data flow pattern in React.
+- Understand the "props are read-only" principle.
+- Implement reusable UI patterns using functional components and props.
+- Use destructuring for cleaner prop handling.
 
-## Expanding the ESLint configuration
+## 🏗️ Architectural Structures
+The project follows a hierarchical component structure. `App.jsx` serves as the data source (orchestrator), passing specific data slices to presentation components like `Card.jsx`. This separation ensures that logic and styling remain organized.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 💡 Technical Code Highlights
+### Prop Destructuring
+```jsx
+// Card.jsx
+const Card = ({ title, description, image }) => (
+  <div className="card">
+    <img src={image} alt={title} />
+    <h3>{title}</h3>
+    <p>{description}</p>
+  </div>
+);
+```
+### Callback Pattern
+```jsx
+// App.jsx
+const handleDelete = (id) => console.log('Deleting', id);
+return <Child onDelete={() => handleDelete(item.id)} />;
+```
