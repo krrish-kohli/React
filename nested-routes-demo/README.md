@@ -1,16 +1,57 @@
-# React + Vite
+# 🔀 Nested Routes Demo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A comprehensive demonstration of nested routing in React using React Router. This project illustrates how to manage complex navigation structures where child components are rendered within parent layouts.
 
-Currently, two official plugins are available:
+## 🚀 Features
+- **Hierarchical Routing**: Implementing parent and child routes using a centralized configuration.
+- **Dynamic Navigation**: Using `Link` and `NavLink` for seamless client-side transitions.
+- **Shared Layouts**: Leveraging the `Outlet` component to render sub-pages within a persistent dashboard interface.
+- **Active State Management**: Highlighting current routes for better user experience.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 📁 Project Structure
+```text
+nested-routes-demo/
+├── src/
+│   ├── components/
+│   │   ├── Dashboard.jsx
+│   │   ├── Settings.jsx
+│   │   └── Profile.jsx
+│   ├── App.jsx
+│   └── main.jsx
+└── README.md
+```
 
-## React Compiler
+## 🛠️ Tech Stack
+- **React** (Vite)
+- **React Router Dom** (v6+)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🎯 Learning Objectives
+- Master the use of the `<Outlet />` component for rendering nested content.
+- Learn to configure nested route definitions in a declarative way within `App.jsx`.
+- Understand how to maintain persistent UI elements (like sidebars) across sub-routes.
+- Explore programmatic navigation and dynamic segment matching.
 
-## Expanding the ESLint configuration
+## 🏗️ Architectural Structures
+The application follows a layout-centric architecture. The `App` component acts as the main entry point, defining the route hierarchy. The `Dashboard` component serves as a layout wrapper, providing a consistent sidebar and header, while using `<Outlet />` as a placeholder for child routes like `Profile` and `Settings`.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 💡 Technical Code Highlights
+### Nested Route Configuration
+```jsx
+// App.jsx
+<Route path="/dashboard" element={<Dashboard />}>
+  <Route path="profile" element={<Profile />} />
+  <Route path="settings" element={<Settings />} />
+</Route>
+```
+### Layout Rendering with Outlet
+```jsx
+// Dashboard.jsx
+const Dashboard = () => (
+  <div className="dashboard-container">
+    <aside><nav>...</nav></aside>
+    <main>
+      <Outlet /> {/* Child routes render here */}
+    </main>
+  </div>
+);
+```
