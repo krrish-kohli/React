@@ -1,16 +1,61 @@
-# React + Vite
+# 🚦 Routing Basics
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A foundational project exploring the core concepts of client-side routing in React application using the `react-router-dom` library.
 
-Currently, two official plugins are available:
+## 🚀 Features
+- **Basic Route Definition**: Mapping URLs to specific components.
+- **Link Components**: Using `<Link>` for navigation without page reloads.
+- **Dynamic Routing**: Handling dynamic path segments (parameters).
+- **Navigation Menu**: A persistent navigation bar across different views.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 📁 Project Structure
+```text
+routing-basics/
+├── src/
+│   ├── components/
+│   │   ├── Home.jsx
+│   │   ├── About.jsx
+│   │   ├── Contact.jsx
+│   │   └── Navbar.jsx
+│   ├── App.jsx
+│   └── main.jsx
+└── README.md
+```
 
-## React Compiler
+## 🛠️ Tech Stack
+- **React** (Vite)
+- **React Router Dom**
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🎯 Learning Objectives
+- Initialize a Router in a React application.
+- Define routes using `BrowserRouter`, `Routes`, and `Route`.
+- Implement declarative navigation with the `Link` component.
+- Differentiate between client-side routing and server-side routing.
 
-## Expanding the ESLint configuration
+## 🏗️ Architectural Structures
+The application uses a flat component structure where `App.jsx` serves as the routing hub. `Navbar` is rendered outside the `Routes` container to remain visible on all pages, while `Home`, `About`, and `Contact` are conditionally rendered based on the URL path.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 💡 Technical Code Highlights
+### Router Setup
+```jsx
+// App.jsx
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+function App() {
+  return (
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </Router>
+  );
+}
+```
+### Declarative Navigation
+```jsx
+// Navbar.jsx
+<Link to="/">Home</Link>
+<Link to="/about">About</Link>
+```
