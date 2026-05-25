@@ -1,16 +1,48 @@
-# React + Vite
+# 🔢 useState Demo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A comprehensive guide to managing local state in functional components using the `useState` hook. This project demonstrates various patterns for state initialization, updates, and complex state management.
 
-Currently, two official plugins are available:
+## 🚀 Features
+- **Counter Implementation**: Incrementing and decrementing numerical state with boundary checks.
+- **Boolean Toggles**: Switching visibility, themes, or states using boolean logic.
+- **Object State Management**: Handling multiple related values in a single state object.
+- **Functional Updates**: Utilizing the updater function pattern for reliable state transitions based on previous state.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 📁 Project Structure
+```text
+useState-demo/
+├── src/
+│   ├── components/
+│   │   ├── Counter.jsx
+│   │   ├── ToggleText.jsx
+│   │   └── ProfileEditor.jsx
+│   ├── App.jsx
+│   └── main.jsx
+└── README.md
+```
 
-## React Compiler
+## 🛠️ Tech Stack
+- **React** (Vite)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🎯 Learning Objectives
+- Initialize state correctly with the `useState` hook.
+- Understand how React schedules state updates and re-renders.
+- Master the functional update pattern (`setCount(prev => prev + 1)`) to avoid race conditions.
+- Learn the "spread operator" pattern for updating specific properties in state objects.
 
-## Expanding the ESLint configuration
+## 🏗️ Architectural Structures
+The application showcases modular components that encapsulate specific stateful logic. `Counter.jsx` focuses on simple primitives, while `ProfileEditor.jsx` demonstrates managing an object-based state where users can edit multiple fields.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 💡 Technical Code Highlights
+### Simple State with Functional Updates
+```jsx
+// Counter.jsx
+const [count, setCount] = useState(0);
+const increment = () => setCount(prevCount => prevCount + 1);
+```
+### Managing Object State
+```jsx
+// ProfileEditor.jsx
+const [profile, setProfile] = useState({ name: 'Guest', bio: '' });
+const updateBio = (newBio) => setProfile(prev => ({ ...prev, bio: newBio }));
+```
